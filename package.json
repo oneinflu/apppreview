@@ -1,0 +1,17 @@
+{
+  "name": "apppreviews-suite",
+  "version": "1.0.0",
+  "description": "Automated Store Preview, Screenshot & Asset Studio for Android APK & iOS",
+  "private": true,
+  "scripts": {
+    "start": "node server/index.js",
+    "server": "node server/index.js",
+    "client": "npm --prefix client run dev",
+    "dev": "concurrently -k -p \"[{name}]\" -n \"SERVER,CLIENT\" -c \"cyan.bold,magenta.bold\" \"npm run server\" \"npm run client\"",
+    "build": "npm --prefix client run build",
+    "install:all": "npm install && npm --prefix client install && npm --prefix server install"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
